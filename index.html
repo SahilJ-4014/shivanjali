@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shivanjali Agro Tourism | Experience Nature</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <a href="#" class="logo"><img src="logo.jpg" alt="Shivanjali Agro Tourism" class="logo-img"></a>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="hamburger">
+            <i class="fas fa-bars fa-2x"></i>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h2>Experience Nature Like Never Before</h2>
+            <h1>Welcome to Shivanjali <br> Agro Tourism</h1>
+            <a href="#services" class="btn-primary">Explore Services</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about section-padding">
+        <div class="max-width about-container">
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?q=80&w=1000&auto=format&fit=crop" alt="About Us">
+                <div class="about-badge">
+                    <span>5+</span>
+                    <p>Years of Nature</p>
+                </div>
+            </div>
+            <div class="about-content">
+                <h3>Our Story</h3>
+                <h2>Connecting You Back to the Roots</h2>
+                <p>Agro tourism is not just a visit to a farm; it's an immersive journey into the heart of nature. At Shivanjali Agro Tourism, we offer a unique blend of traditional farming and modern comfort.</p>
+                <ul class="about-list">
+                    <li><i class="fas fa-check-circle"></i> Peaceful farm stay away from city noise</li>
+                    <li><i class="fas fa-check-circle"></i> Authentic organic farming experience</li>
+                    <li><i class="fas fa-check-circle"></i> Safe and family-friendly destination</li>
+                    <li><i class="fas fa-check-circle"></i> Educational tours for kids and students</li>
+                </ul>
+                <a href="#contact" class="btn-primary">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services section-padding">
+        <div class="max-width">
+            <div class="services-header">
+                <h3>What We Offer</h3>
+                <h2>Our Services</h2>
+            </div>
+
+            <div class="services-grid">
+                <!-- Service 1: Swimming Pool -->
+                <div class="service-card">
+                    <div class="service-carousel">
+                        <div class="carousel-wrapper">
+                            <img src="AgroTourism/swimming pool/s1.jpeg" alt="Swimming Pool 1" class="carousel-item">
+                            <img src="AgroTourism/swimming pool/s2.png" alt="Swimming Pool 2" class="carousel-item">
+                            <img src="AgroTourism/swimming pool/s3.jpeg" alt="Swimming Pool 3" class="carousel-item">
+                            <video src="AgroTourism/swimming pool/s4.mp4" class="carousel-item" controls muted></video>
+                            <video src="AgroTourism/swimming pool/s5.mp4" class="carousel-item" controls muted></video>
+                        </div>
+                        <button class="carousel-btn carousel-prev" onclick="changeSlide(this, -1)"><i class="fas fa-chevron-left"></i></button>
+                        <button class="carousel-btn carousel-next" onclick="changeSlide(this, 1)"><i class="fas fa-chevron-right"></i></button>
+                        <div class="carousel-dots">
+                            <span class="dot active" onclick="currentSlide(this, 0)"></span>
+                            <span class="dot" onclick="currentSlide(this, 1)"></span>
+                            <span class="dot" onclick="currentSlide(this, 2)"></span>
+                            <span class="dot" onclick="currentSlide(this, 3)"></span>
+                            <span class="dot" onclick="currentSlide(this, 4)"></span>
+                        </div>
+                    </div>
+                    <div class="service-info">
+                        <h4>🏊 Swimming Pool</h4>
+                        <p>Enjoy the feeling of rain even in summer with our refreshing swimming pool experience. Perfect for families and all age groups!</p>
+                    </div>
+                </div>
+
+                <!-- Service 2: Boating -->
+                <div class="service-card">
+                    <div class="service-carousel">
+                        <div class="carousel-wrapper">
+                            <img src="AgroTourism/Boating/b1.png" alt="Boating 1" class="carousel-item">
+                            <video src="AgroTourism/Boating/b2.mp4" class="carousel-item" controls muted></video>
+                            <video src="AgroTourism/Boating/b3.mp4" class="carousel-item" controls muted></video>
+                        </div>
+                        <button class="carousel-btn carousel-prev" onclick="changeSlide(this, -1)"><i class="fas fa-chevron-left"></i></button>
+                        <button class="carousel-btn carousel-next" onclick="changeSlide(this, 1)"><i class="fas fa-chevron-right"></i></button>
+                        <div class="carousel-dots">
+                            <span class="dot active" onclick="currentSlide(this, 0)"></span>
+                            <span class="dot" onclick="currentSlide(this, 1)"></span>
+                            <span class="dot" onclick="currentSlide(this, 2)"></span>
+                        </div>
+                    </div>
+                    <div class="service-info">
+                        <h4>⛵ Boating Experience</h4>
+                        <p>Enjoy a serene boating experience in flowing water. Feel the breeze and connect with nature in a unique way.</p>
+                    </div>
+                </div>
+
+                <!-- Service 3: Bullock Cart Ride -->
+                <div class="service-card">
+                    <div class="service-carousel">
+                        <div class="carousel-wrapper">
+                            <img src="AgroTourism/Bulakcart/c1.png" alt="Bullock Cart 1" class="carousel-item">
+                            <img src="AgroTourism/Bulakcart/c2.jpeg" alt="Bullock Cart 2" class="carousel-item">
+                            <video src="AgroTourism/Bulakcart/c3.mp4" class="carousel-item" controls muted></video>
+                        </div>
+                        <button class="carousel-btn carousel-prev" onclick="changeSlide(this, -1)"><i class="fas fa-chevron-left"></i></button>
+                        <button class="carousel-btn carousel-next" onclick="changeSlide(this, 1)"><i class="fas fa-chevron-right"></i></button>
+                        <div class="carousel-dots">
+                            <span class="dot active" onclick="currentSlide(this, 0)"></span>
+                            <span class="dot" onclick="currentSlide(this, 1)"></span>
+                            <span class="dot" onclick="currentSlide(this, 2)"></span>
+                        </div>
+                    </div>
+                    <div class="service-info">
+                        <h4>🐂 Bullock Cart Ride</h4>
+                        <p>Experience traditional bullock and horse cart rides around the farm. Journey through scenic village paths and lush fields.</p>
+                    </div>
+                </div>
+
+                <!-- Service 4: Accommodation -->
+                <div class="service-card">
+                    <div class="service-carousel">
+                        <div class="carousel-wrapper">
+                            <img src="AgroTourism/rooms/d1.png" alt="Rooms 1" class="carousel-item">
+                            <img src="AgroTourism/rooms/d2.jpeg" alt="Rooms 2" class="carousel-item">
+                            <img src="AgroTourism/rooms/d4.png" alt="Rooms 3" class="carousel-item">
+                            <video src="AgroTourism/rooms/d3.mp4" class="carousel-item" controls muted></video>
+                            <video src="AgroTourism/rooms/d5.mp4" class="carousel-item" controls muted></video>
+                        </div>
+                        <button class="carousel-btn carousel-prev" onclick="changeSlide(this, -1)"><i class="fas fa-chevron-left"></i></button>
+                        <button class="carousel-btn carousel-next" onclick="changeSlide(this, 1)"><i class="fas fa-chevron-right"></i></button>
+                        <div class="carousel-dots">
+                            <span class="dot active" onclick="currentSlide(this, 0)"></span>
+                            <span class="dot" onclick="currentSlide(this, 1)"></span>
+                            <span class="dot" onclick="currentSlide(this, 2)"></span>
+                            <span class="dot" onclick="currentSlide(this, 3)"></span>
+                            <span class="dot" onclick="currentSlide(this, 4)"></span>
+                        </div>
+                    </div>
+                    <div class="service-info">
+                        <h4>🏡 Comfortable Accommodation</h4>
+                        <p>Modern rooms built with traditional red bricks, tent stays, cozy cottages (huts), and unique treehouse rooms.</p>
+                    </div>
+                </div>
+
+                <!-- Service 5: Adventure Activities -->
+                <div class="service-card">
+                    <div class="service-carousel">
+                        <div class="carousel-wrapper">
+                            <img src="AgroTourism/advanturious activity/a1.png" alt="Adventure 1" class="carousel-item">
+                            <img src="AgroTourism/advanturious activity/a2.png" alt="Adventure 2" class="carousel-item">
+                            <img src="AgroTourism/advanturious activity/a3.png" alt="Adventure 3" class="carousel-item">
+                            <img src="AgroTourism/advanturious activity/a4.jpeg" alt="Adventure 4" class="carousel-item">
+                            <video src="AgroTourism/advanturious activity/a5.mp4" class="carousel-item" controls muted></video>
+                            <video src="AgroTourism/advanturious activity/a6.mp4" class="carousel-item" controls muted></video>
+                            <video src="AgroTourism/advanturious activity/a7.mp4" class="carousel-item" controls muted></video>
+                        </div>
+                        <button class="carousel-btn carousel-prev" onclick="changeSlide(this, -1)"><i class="fas fa-chevron-left"></i></button>
+                        <button class="carousel-btn carousel-next" onclick="changeSlide(this, 1)"><i class="fas fa-chevron-right"></i></button>
+                        <div class="carousel-dots">
+                            <span class="dot active" onclick="currentSlide(this, 0)"></span>
+                            <span class="dot" onclick="currentSlide(this, 1)"></span>
+                            <span class="dot" onclick="currentSlide(this, 2)"></span>
+                            <span class="dot" onclick="currentSlide(this, 3)"></span>
+                            <span class="dot" onclick="currentSlide(this, 4)"></span>
+                            <span class="dot" onclick="currentSlide(this, 5)"></span>
+                            <span class="dot" onclick="currentSlide(this, 6)"></span>
+                        </div>
+                    </div>
+                    <div class="service-info">
+                        <h4>🎉 Adventures & Activities</h4>
+                        <p>Rain Dance, Farm Tours (Shivar Feri), Trekking, water waterfall experiences, and thrilling rope adventure activities!</p>
+                    </div>
+                </div>
+
+                <!-- Service 6: Scenic Features -->
+                <div class="service-card">
+                    <div class="service-carousel">
+                        <div class="carousel-wrapper">
+                            <img src="AgroTourism/advanturious activity/a1.png" alt="Scenic 1" class="carousel-item">
+                            <img src="AgroTourism/advanturious activity/a2.png" alt="Scenic 2" class="carousel-item">
+                            <img src="AgroTourism/advanturious activity/a3.png" alt="Scenic 3" class="carousel-item">
+                        </div>
+                        <button class="carousel-btn carousel-prev" onclick="changeSlide(this, -1)"><i class="fas fa-chevron-left"></i></button>
+                        <button class="carousel-btn carousel-next" onclick="changeSlide(this, 1)"><i class="fas fa-chevron-right"></i></button>
+                        <div class="carousel-dots">
+                            <span class="dot active" onclick="currentSlide(this, 0)"></span>
+                            <span class="dot" onclick="currentSlide(this, 1)"></span>
+                            <span class="dot" onclick="currentSlide(this, 2)"></span>
+                        </div>
+                    </div>
+                    <div class="service-info">
+                        <h4>🌿 Scenic Agro-Tourism Spread</h4>
+                        <p>Enjoy our 11-acre farm with suspension bridge experience and amazing photoshoots. Perfect for selfies and memorable moments!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Specifications Section -->
+    <section class="specs section-padding">
+        <div class="max-width">
+            <h2>Why Choose Shivanjali?</h2>
+            <div class="specs-grid">
+                <div class="spec-item">
+                    <i class="fas fa-utensils spec-icon"></i>
+                    <h4 class="spec-title">Fresh Organic Food</h4>
+                    <p>Farm-to-table meals prepared with love.</p>
+                </div>
+                <div class="spec-item">
+                    <i class="fas fa-home spec-icon"></i>
+                    <h4 class="spec-title">Clean Accommodation</h4>
+                    <p>Hygienic and comfortable eco-cottages.</p>
+                </div>
+                <div class="spec-item">
+                    <i class="fas fa-shield-alt spec-icon"></i>
+                    <h4 class="spec-title">Safe Environment</h4>
+                    <p>Secure premises for families and kids.</p>
+                </div>
+                <div class="spec-item">
+                    <i class="fas fa-leaf spec-icon"></i>
+                    <h4 class="spec-title">Guided Farm Tours</h4>
+                    <p>Expert insights into organic farming.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section - Packages -->
+    <section id="pricing" class="pricing section-padding">
+        <div class="max-width">
+            <div class="section-header">
+                <h3>Choose Your Package</h3>
+                <h2>Our Packages</h2>
+            </div>
+            <div class="pricing-grid">
+                <div class="price-card">
+                    <h4>Day Visit Package</h4>
+                    <p class="price">₹499</p>
+                    <span class="period">per person</span>
+                    <ul class="features">
+                        <li><i class="fas fa-check"></i> Welcome Drink</li>
+                        <li><i class="fas fa-check"></i> Farm Tour & Shivar Feri Experience</li>
+                        <li><i class="fas fa-check"></i> Authentic Maharashtrian Lunch</li>
+                        <li><i class="fas fa-check"></i> Bullock/Horse Cart Ride</li>
+                        <li><i class="fas fa-check"></i> Swimming Pool Access</li>
+                        <li><i class="fas fa-check"></i> Evening Snacks</li>
+                    </ul>
+                    <button class="btn-primary">Book Now</button>
+                </div>
+
+                <div class="price-card popular">
+                    <h4>Night Stay Package</h4>
+                    <p class="price">₹1,499</p>
+                    <span class="period">per person</span>
+                    <ul class="features">
+                        <li><i class="fas fa-check"></i> All Day Visit Features</li>
+                        <li><i class="fas fa-check"></i> Comfortable Room Stay</li>
+                        <li><i class="fas fa-check"></i> Dinner & Breakfast</li>
+                        <li><i class="fas fa-check"></i> Boating Experience</li>
+                        <li><i class="fas fa-check"></i> Campfire Session</li>
+                        <li><i class="fas fa-check"></i> Early Morning Trek</li>
+                    </ul>
+                    <button class="btn-primary">Book Now</button>
+                </div>
+
+                <div class="price-card">
+                    <h4>Adventure Package</h4>
+                    <p class="price">₹1,999</p>
+                    <span class="period">per person</span>
+                    <ul class="features">
+                        <li><i class="fas fa-check"></i> Night Stay Accommodation</li>
+                        <li><i class="fas fa-check"></i> All Meals & Drinks Included</li>
+                        <li><i class="fas fa-check"></i> Rope Adventure Activities</li>
+                        <li><i class="fas fa-check"></i> Boating & Waterfall Experience</li>
+                        <li><i class="fas fa-check"></i> Rain Dance Activity</li>
+                        <li><i class="fas fa-check"></i> Professional Photos & Videos</li>
+                    </ul>
+                    <button class="btn-primary">Book Now</button>
+                </div>
+
+                <div class="price-card">
+                    <h4>Family Premium Package</h4>
+                    <p class="price">₹3,999</p>
+                    <span class="period">up to 4 members</span>
+                    <ul class="features">
+                        <li><i class="fas fa-check"></i> Private Cottage/Room</li>
+                        <li><i class="fas fa-check"></i> All Meals & Local Cuisine</li>
+                        <li><i class="fas fa-check"></i> Personal Farm Guide</li>
+                        <li><i class="fas fa-check"></i> All Activities Included</li>
+                        <li><i class="fas fa-check"></i> Kids Special Activities</li>
+                        <li><i class="fas fa-check"></i> Professional Photoshoot</li>
+                    </ul>
+                    <button class="btn-primary">Book Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section-padding">
+        <div class="max-width contact-container">
+            <div class="contact-info">
+                <h2>Plan Your Visit Today</h2>
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                    <div class="contact-text">
+                        <p>Call Us</p>
+                        <p><strong>Shriraj Jagadale</strong></p>
+                        <p>+91 8855981033</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                    <div class="contact-text">
+                        <p>Email Us</p>
+                        <p>info@shivanjaliagro.com</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <div class="contact-text">
+                        <p>Location</p>
+                        <p>Masur Village, Karad, Maharashtra</p>
+                    </div>
+                </div>
+                <div class="social-item">
+                    <a href="#" class="social-btn"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/shivanjali_agro_tourism_masur?igsh=MXh4Y2Nsb3Fuc2VmdQ==" target="_blank" class="social-btn"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3822.0238626524316!2d73.91765!3d17.33568!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc186e1e1e1e1e1%3A0x1234567890!2sShivanjali%20Agro%20Tourism!5e0!3m2!1sen!2sin!4v1700000000000" width="100%" height="100%" style="border:0; border-radius: 8px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="max-width footer-grid">
+            <div class="footer-info">
+                <h2 class="footer-logo">Shivanjali Agro Tourism</h2>
+                <p class="footer-desc">Experience the authentic village life and organic farming at its best. Join us for a peaceful getaway in the lap of nature.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Contact</h4>
+                <ul>
+                    <li>Masur, Karad, MH</li>
+                    <li>+91 88559 81033</li>
+                    <li>info@shivanjaliagro.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2026 Shivanjali Agro Tourism. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Custom Script -->
+    <script src="script.js"></script>
+</body>
+</html>
+

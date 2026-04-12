@@ -588,6 +588,14 @@ video.carousel-item::-webkit-media-controls {
     font-size: 12px;
 }
 
+.timing {
+    color: #666;
+    margin-bottom: 15px;
+    display: block;
+    font-size: 11px;
+    font-style: italic;
+}
+
 .features {
     list-style: none;
     margin-bottom: 20px;

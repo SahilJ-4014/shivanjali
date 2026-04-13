@@ -10,6 +10,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
@@ -45,24 +48,26 @@
     <!-- About Section -->
     <section id="about" class="about section-padding">
         <div class="max-width about-container">
-            <div class="about-image">
-                <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?q=80&w=1000&auto=format&fit=crop" alt="About Us">
-                <div class="about-badge">
-                    <span>5+</span>
-                    <p>Years of Nature</p>
+            <div class="row g-4 align-items-center">
+                <div class="col-lg-6 col-md-12 about-image">
+                    <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?q=80&w=1000&auto=format&fit=crop" alt="About Us" class="img-fluid rounded">
+                    <div class="about-badge">
+                        <span>5+</span>
+                        <p>Years of Nature</p>
+                    </div>
                 </div>
-            </div>
-            <div class="about-content">
-                <h3>Our Story</h3>
-                <h2>Connecting You Back to the Roots</h2>
-                <p>Agro tourism is not just a visit to a farm; it's an immersive journey into the heart of nature. At Shivanjali Agro Tourism, we offer a unique blend of traditional farming and modern comfort.</p>
-                <ul class="about-list">
-                    <li><i class="fas fa-check-circle"></i> Peaceful farm stay away from city noise</li>
-                    <li><i class="fas fa-check-circle"></i> Authentic organic farming experience</li>
-                    <li><i class="fas fa-check-circle"></i> Safe and family-friendly destination</li>
-                    <li><i class="fas fa-check-circle"></i> Educational tours for kids and students</li>
-                </ul>
-                <a href="#contact" class="btn-primary">Learn More</a>
+                <div class="col-lg-6 col-md-12 about-content">
+                    <h3>Our Story</h3>
+                    <h2>Connecting You Back to the Roots</h2>
+                    <p>Agro tourism is not just a visit to a farm; it's an immersive journey into the heart of nature. At Shivanjali Agro Tourism, we offer a unique blend of traditional farming and modern comfort.</p>
+                    <ul class="about-list">
+                        <li><i class="fas fa-check-circle"></i> Peaceful farm stay away from city noise</li>
+                        <li><i class="fas fa-check-circle"></i> Authentic organic farming experience</li>
+                        <li><i class="fas fa-check-circle"></i> Safe and family-friendly destination</li>
+                        <li><i class="fas fa-check-circle"></i> Educational tours for kids and students</li>
+                    </ul>
+                    <a href="#contact" class="btn-primary">Learn More</a>
+                </div>
             </div>
         </div>
     </section>
@@ -75,9 +80,9 @@
                 <h2>Our Services</h2>
             </div>
 
-            <div class="services-grid">
+            <div class="services-grid row g-4">
                 <!-- Service 1: Swimming Pool -->
-                <div class="service-card">
+                <div class="col-lg-4 col-md-6 col-sm-12 service-card">
                     <div class="service-carousel">
                         <div class="carousel-wrapper">
                             <img src="AgroTourism/swimming pool/s1.jpeg" alt="Swimming Pool 1" class="carousel-item">
@@ -103,7 +108,7 @@
                 </div>
 
                 <!-- Service 2: Boating -->
-                <div class="service-card">
+                <div class="col-lg-4 col-md-6 col-sm-12 service-card">
                     <div class="service-carousel">
                         <div class="carousel-wrapper">
                             <img src="AgroTourism/Boating/b1.png" alt="Boating 1" class="carousel-item">
@@ -125,7 +130,7 @@
                 </div>
 
                 <!-- Service 3: Bullock Cart Ride -->
-                <div class="service-card">
+                <div class="col-lg-4 col-md-6 col-sm-12 service-card">
                     <div class="service-carousel">
                         <div class="carousel-wrapper">
                             <img src="AgroTourism/Bulakcart/c1.png" alt="Bullock Cart 1" class="carousel-item">
@@ -147,7 +152,7 @@
                 </div>
 
                 <!-- Service 4: Accommodation -->
-                <div class="service-card">
+                <div class="col-lg-4 col-md-6 col-sm-12 service-card">
                     <div class="service-carousel">
                         <div class="carousel-wrapper">
                             <img src="AgroTourism/rooms/d1.png" alt="Rooms 1" class="carousel-item">
@@ -173,7 +178,7 @@
                 </div>
 
                 <!-- Service 5: Adventure Activities -->
-                <div class="service-card">
+                <div class="col-lg-4 col-md-6 col-sm-12 service-card">
                     <div class="service-carousel">
                         <div class="carousel-wrapper">
                             <img src="AgroTourism/advanturious activity/a1.png" alt="Adventure 1" class="carousel-item">
@@ -203,7 +208,7 @@
                 </div>
 
                 <!-- Service 6: Scenic Features -->
-                <div class="service-card">
+                <div class="col-lg-4 col-md-6 col-sm-12 service-card">
                     <div class="service-carousel">
                         <div class="carousel-wrapper">
                             <img src="AgroTourism/advanturious activity/a1.png" alt="Scenic 1" class="carousel-item">
@@ -231,23 +236,27 @@
     <section class="specs section-padding">
         <div class="max-width">
             <h2>Why Choose Shivanjali?</h2>
-            <div class="specs-grid">
-                <div class="spec-item">
+            <div class="specs-grid row g-4">
+                <div class="col-lg-3 col-md-6 col-sm-12 spec-item">
                     <i class="fas fa-utensils spec-icon"></i>
                     <h4 class="spec-title">Fresh Organic Food</h4>
                     <p>Farm-to-table meals prepared with love.</p>
                 </div>
-                <div class="spec-item">
+                <div class="col-lg-3 col-md-6 col-sm-12 spec-item">
                     <i class="fas fa-home spec-icon"></i>
                     <h4 class="spec-title">Clean Accommodation</h4>
                     <p>Hygienic and comfortable eco-cottages.</p>
                 </div>
-                <div class="spec-item">
+                <div class="col-lg-3 col-md-6 col-sm-12 spec-item">
                     <i class="fas fa-shield-alt spec-icon"></i>
                     <h4 class="spec-title">Safe Environment</h4>
                     <p>Secure premises for families and kids.</p>
                 </div>
-                <div class="spec-item">
+                <div class="col-lg-3 col-md-6 col-sm-12 spec-item">
+                    <i class="fas fa-leaf spec-icon"></i>
+                    <h4 class="spec-title">Guided Farm Tours</h4>
+                    <p>Expert insights into organic farming.</p>
+                </div>
                     <i class="fas fa-leaf spec-icon"></i>
                     <h4 class="spec-title">Guided Farm Tours</h4>
                     <p>Expert insights into organic farming.</p>
@@ -263,8 +272,8 @@
                 <h3>Choose Your Package</h3>
                 <h2>Our Packages</h2>
             </div>
-            <div class="pricing-grid">
-                <div class="price-card">
+            <div class="pricing-grid row g-4">
+                <div class="col-lg-6 col-md-12 col-sm-12 price-card">
                     <h4>Half Day Package</h4>
                     <p class="price">₹450</p>
                     <span class="period">per person</span>
@@ -278,7 +287,7 @@
                     </ul>
                 </div>
 
-                <div class="price-card">
+                <div class="col-lg-6 col-md-12 col-sm-12 price-card">
                     <h4>Full Day Package</h4>
                     <p class="price">₹600</p>
                     <span class="period">per person</span>
@@ -292,7 +301,7 @@
                     </ul>
                 </div>
 
-                <div class="price-card popular">
+                <div class="col-lg-6 col-md-12 col-sm-12 price-card popular">
                     <h4>Half Day Stay Package</h4>
                     <p class="price">₹950</p>
                     <span class="period">per person</span>
@@ -306,7 +315,7 @@
                     </ul>
                 </div>
 
-                <div class="price-card">
+                <div class="col-lg-6 col-md-12 col-sm-12 price-card">
                     <h4>Full Residential Package</h4>
                     <p class="price">₹1,400</p>
                     <span class="period">per person</span>
@@ -326,7 +335,8 @@
     <!-- Contact Section -->
     <section id="contact" class="contact section-padding">
         <div class="max-width contact-container">
-            <div class="contact-info">
+            <div class="row g-4">
+                <div class="col-lg-6 col-md-12 contact-info">
                 <h2>Plan Your Visit Today</h2>
                 <div class="contact-item">
                     <div class="contact-icon"><i class="fas fa-phone"></i></div>
@@ -355,20 +365,21 @@
                     <a href="https://www.instagram.com/shivanjali_agro_tourism_masur?igsh=MXh4Y2Nsb3Fuc2VmdQ==" target="_blank" class="social-btn"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
-            <div class="map-container">
+            <div class="col-lg-6 col-md-12 map-container">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3822.0238626524316!2d73.91765!3d17.33568!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc186e1e1e1e1e1%3A0x1234567890!2sShivanjali%20Agro%20Tourism!5e0!3m2!1sen!2sin!4v1700000000000" width="100%" height="100%" style="border:0; border-radius: 8px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <div class="max-width footer-grid">
-            <div class="footer-info">
+        <div class="max-width footer-grid row g-4">
+            <div class="col-lg-4 col-md-6 col-sm-12 footer-info">
                 <h2 class="footer-logo">Shivanjali Agro Tourism</h2>
                 <p class="footer-desc">Experience the authentic village life and organic farming at its best. Join us for a peaceful getaway in the lap of nature.</p>
             </div>
-            <div class="footer-links">
+            <div class="col-lg-4 col-md-6 col-sm-12 footer-links">
                 <h4>Quick Links</h4>
                 <ul>
                     <li><a href="#home">Home</a></li>
@@ -377,7 +388,7 @@
                     <li><a href="#pricing">Pricing</a></li>
                 </ul>
             </div>
-            <div class="footer-links">
+            <div class="col-lg-4 col-md-6 col-sm-12 footer-links">
                 <h4>Contact</h4>
                 <ul>
                     <li>Masur, Karad, MH</li>
@@ -391,6 +402,9 @@
         </div>
     </footer>
 
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
     <!-- jQuery Library -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     

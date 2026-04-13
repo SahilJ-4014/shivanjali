@@ -1,70 +1,74 @@
 /* 
   Shivanjali Agro Tourism - Advanced Scripts with Video Support
-  Enhanced JavaScript for navbar effects, carousel with video support, and interactions.
+  Optimized JavaScript for navbar effects, carousel with video support, and interactions.
 */
 
 // Carousel Functionality with Image and Video Support
+class CarouselManager {
+    constructor(carousel) {
+        this.carousel = carousel;
+        this.items = carousel.querySelectorAll('.carousel-item');
+        this.dots = carousel.querySelectorAll('.dot');
+    }
+
+    getCurrentIndex() {
+        return Array.from(this.items).findIndex(item => item.classList.contains('active'));
+    }
+
+    changeSlide(direction) {
+        let currentIndex = this.getCurrentIndex();
+        let newIndex = currentIndex + direction;
+        
+        if (newIndex < 0) newIndex = this.items.length - 1;
+        if (newIndex >= this.items.length) newIndex = 0;
+        
+        this.showSlide(newIndex);
+    }
+
+    showSlide(index) {
+        // Pause all videos and remove active class
+        this.items.forEach(item => {
+            if (item.tagName === 'VIDEO') item.pause();
+            item.classList.remove('active');
+        });
+        this.dots.forEach(dot => dot.classList.remove('active'));
+        
+        // Activate new item
+        if (this.items[index]) {
+            this.items[index].classList.add('active');
+            if (this.items[index].tagName === 'VIDEO') {
+                this.items[index].play();
+            }
+        }
+        if (this.dots[index]) {
+            this.dots[index].classList.add('active');
+        }
+    }
+}
+
+// Bridge functions for HTML onclick handlers
 function changeSlide(button, direction) {
     const carousel = button.closest('.service-carousel');
-    const items = carousel.querySelectorAll('.carousel-item');
-    const dots = carousel.querySelectorAll('.dot');
-    
-    let currentIndex = 0;
-    items.forEach((item, index) => {
-        if (item.classList.contains('active')) {
-            currentIndex = index;
-        }
-    });
-    
-    let newIndex = currentIndex + direction;
-    if (newIndex < 0) {
-        newIndex = items.length - 1;
-    } else if (newIndex >= items.length) {
-        newIndex = 0;
-    }
-    
-    showSlide(carousel, newIndex);
+    const manager = new CarouselManager(carousel);
+    manager.changeSlide(direction);
 }
 
 function currentSlide(dot, index) {
     const carousel = dot.closest('.service-carousel');
-    showSlide(carousel, index);
-}
-
-function showSlide(carousel, index) {
-    const items = carousel.querySelectorAll('.carousel-item');
-    const dots = carousel.querySelectorAll('.dot');
-    
-    // Pause all videos
-    items.forEach(item => {
-        if (item.tagName === 'VIDEO') {
-            item.pause();
-        }
-        item.classList.remove('active');
-    });
-    dots.forEach(dot => dot.classList.remove('active'));
-    
-    // Activate new item
-    if (items[index]) {
-        items[index].classList.add('active');
-        // Auto-play video if it's a video element
-        if (items[index].tagName === 'VIDEO') {
-            items[index].play();
-        }
-    }
-    if (dots[index]) {
-        dots[index].classList.add('active');
-    }
+    const manager = new CarouselManager(carousel);
+    manager.showSlide(index);
 }
 
 // Initialize carousels on page load
 document.addEventListener('DOMContentLoaded', () => {
+    // Initialize all carousels
     document.querySelectorAll('.service-carousel').forEach(carousel => {
-        const firstItem = carousel.querySelector('.carousel-item');
-        const firstDot = carousel.querySelector('.dot');
+        const manager = new CarouselManager(carousel);
+        const firstItem = manager.items[0];
+        const firstDot = manager.dots[0];
+        
         if (firstItem) {
             firstItem.classList.add('active');
-            // Auto-play video if first item is a video
             if (firstItem.tagName === 'VIDEO') {
                 firstItem.play();
             }
@@ -74,43 +78,41 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Navbar Scroll Effect
     const nav = document.querySelector('nav');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            nav.classList.add('scrolled');
-        } else {
-            nav.classList.remove('scrolled');
-        }
-    });
+    window.addEventListener('scroll', function() {
+        nav.classList.toggle('scrolled', window.scrollY > 50);
+    }, { passive: true });
 
     // Mobile Menu Toggle
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
     
-    hamburger.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-    });
-    
-    // Close mobile menu when clicking on a link
-    document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', () => {
-            navLinks.classList.remove('active');
+    if (hamburger && navLinks) {
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
         });
-    });
+        
+        // Close mobile menu when clicking on a link - Event delegation
+        navLinks.addEventListener('click', (e) => {
+            if (e.target.tagName === 'A') {
+                navLinks.classList.remove('active');
+            }
+        });
+    }
 
     // Smooth scrolling for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth'
-                });
+        anchor.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            const target = document.querySelector(href);
+            
+            if (target && href !== '#') {
+                e.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth' });
             }
         });
     });
 
-    // Form Submission (Mock)
+    // Form Submission Handler
     const contactForm = document.querySelector('.contact-form');
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {

@@ -1,124 +1,137 @@
 /* 
   Shivanjali Agro Tourism - Advanced Scripts with Video Support
-  Optimized JavaScript for navbar effects, carousel with video support, and interactions.
+  jQuery Implementation for navbar effects, carousel with video support, and interactions.
 */
 
 // Carousel Functionality with Image and Video Support
 class CarouselManager {
     constructor(carousel) {
-        this.carousel = carousel;
-        this.items = carousel.querySelectorAll('.carousel-item');
-        this.dots = carousel.querySelectorAll('.dot');
+        this.$carousel = $(carousel);
+        this.$items = this.$carousel.find('.carousel-item');
+        this.$dots = this.$carousel.find('.dot');
     }
 
     getCurrentIndex() {
-        return Array.from(this.items).findIndex(item => item.classList.contains('active'));
+        let currentIndex = 0;
+        this.$items.each((index, item) => {
+            if ($(item).hasClass('active')) {
+                currentIndex = index;
+            }
+        });
+        return currentIndex;
     }
 
     changeSlide(direction) {
         let currentIndex = this.getCurrentIndex();
         let newIndex = currentIndex + direction;
         
-        if (newIndex < 0) newIndex = this.items.length - 1;
-        if (newIndex >= this.items.length) newIndex = 0;
+        if (newIndex < 0) newIndex = this.$items.length - 1;
+        if (newIndex >= this.$items.length) newIndex = 0;
         
         this.showSlide(newIndex);
     }
 
     showSlide(index) {
         // Pause all videos and remove active class
-        this.items.forEach(item => {
-            if (item.tagName === 'VIDEO') item.pause();
-            item.classList.remove('active');
+        this.$items.each((idx, item) => {
+            if ($(item).prop('tagName') === 'VIDEO') {
+                $(item)[0].pause();
+            }
+            $(item).removeClass('active');
         });
-        this.dots.forEach(dot => dot.classList.remove('active'));
+        this.$dots.removeClass('active');
         
         // Activate new item
-        if (this.items[index]) {
-            this.items[index].classList.add('active');
-            if (this.items[index].tagName === 'VIDEO') {
-                this.items[index].play();
+        if (this.$items.eq(index).length) {
+            this.$items.eq(index).addClass('active');
+            if (this.$items.eq(index).prop('tagName') === 'VIDEO') {
+                this.$items.eq(index)[0].play();
             }
         }
-        if (this.dots[index]) {
-            this.dots[index].classList.add('active');
+        if (this.$dots.eq(index).length) {
+            this.$dots.eq(index).addClass('active');
         }
     }
 }
 
 // Bridge functions for HTML onclick handlers
 function changeSlide(button, direction) {
-    const carousel = button.closest('.service-carousel');
-    const manager = new CarouselManager(carousel);
+    const $carousel = $(button).closest('.service-carousel');
+    const manager = new CarouselManager($carousel[0]);
     manager.changeSlide(direction);
 }
 
 function currentSlide(dot, index) {
-    const carousel = dot.closest('.service-carousel');
-    const manager = new CarouselManager(carousel);
+    const $carousel = $(dot).closest('.service-carousel');
+    const manager = new CarouselManager($carousel[0]);
     manager.showSlide(index);
 }
 
-// Initialize carousels on page load
-document.addEventListener('DOMContentLoaded', () => {
+// Initialize on document ready
+$(document).ready(function() {
+    
     // Initialize all carousels
-    document.querySelectorAll('.service-carousel').forEach(carousel => {
-        const manager = new CarouselManager(carousel);
-        const firstItem = manager.items[0];
-        const firstDot = manager.dots[0];
+    $('.service-carousel').each(function() {
+        const manager = new CarouselManager(this);
+        const $firstItem = manager.$items.first();
+        const $firstDot = manager.$dots.first();
         
-        if (firstItem) {
-            firstItem.classList.add('active');
-            if (firstItem.tagName === 'VIDEO') {
-                firstItem.play();
+        if ($firstItem.length) {
+            $firstItem.addClass('active');
+            if ($firstItem.prop('tagName') === 'VIDEO') {
+                $firstItem[0].play();
             }
         }
-        if (firstDot) firstDot.classList.add('active');
+        if ($firstDot.length) {
+            $firstDot.addClass('active');
+        }
     });
 
     // Navbar Scroll Effect
-    const nav = document.querySelector('nav');
-    window.addEventListener('scroll', function() {
-        nav.classList.toggle('scrolled', window.scrollY > 50);
-    }, { passive: true });
+    const $nav = $('nav');
+    $(window).on('scroll', function() {
+        if ($(window).scrollTop() > 50) {
+            $nav.addClass('scrolled');
+        } else {
+            $nav.removeClass('scrolled');
+        }
+    });
 
     // Mobile Menu Toggle
-    const hamburger = document.querySelector('.hamburger');
-    const navLinks = document.querySelector('.nav-links');
+    const $hamburger = $('.hamburger');
+    const $navLinks = $('.nav-links');
     
-    if (hamburger && navLinks) {
-        hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
+    if ($hamburger.length && $navLinks.length) {
+        $hamburger.on('click', function() {
+            $navLinks.toggleClass('active');
         });
         
         // Close mobile menu when clicking on a link - Event delegation
-        navLinks.addEventListener('click', (e) => {
-            if (e.target.tagName === 'A') {
-                navLinks.classList.remove('active');
-            }
+        $navLinks.on('click', 'a', function() {
+            $navLinks.removeClass('active');
         });
     }
 
     // Smooth scrolling for navigation links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            const href = this.getAttribute('href');
-            const target = document.querySelector(href);
-            
-            if (target && href !== '#') {
-                e.preventDefault();
-                target.scrollIntoView({ behavior: 'smooth' });
-            }
-        });
+    $('a[href^="#"]').on('click', function(e) {
+        const href = $(this).attr('href');
+        const $target = $(href);
+        
+        if ($target.length && href !== '#') {
+            e.preventDefault();
+            $('html, body').animate({
+                scrollTop: $target.offset().top
+            }, 'smooth');
+        }
     });
 
     // Form Submission Handler
-    const contactForm = document.querySelector('.contact-form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
+    const $contactForm = $('.contact-form');
+    if ($contactForm.length) {
+        $contactForm.on('submit', function(e) {
             e.preventDefault();
             alert('Thank you for your message! We will get back to you soon.');
-            contactForm.reset();
+            $contactForm[0].reset();
         });
     }
 });

@@ -94,6 +94,32 @@ h1, h2, h3, h4 {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
+/* Mobile Navbar Collapse */
+@media (max-width: 991px) {
+    .navbar-collapse {
+        background-color: rgba(45, 90, 39, 0.98);
+        margin-top: 10px;
+        border-radius: 10px;
+        padding: 15px 0;
+    }
+    
+    .navbar-nav {
+        flex-direction: column;
+    }
+    
+    .nav-item {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .nav-item:last-child {
+        border-bottom: none;
+    }
+    
+    .nav-link {
+        padding: 12px 20px !important;
+    }
+}
+
 /* Navbar Scroll Effect */
 .navbar.scrolled {
     background-color: var(--white) !important;
@@ -175,6 +201,10 @@ h1, h2, h3, h4 {
 
 .about-container {
     /* Bootstrap grid handles layout */
+}
+
+.about-content {
+    /* Container for about text content */
 }
 
 .about-image {

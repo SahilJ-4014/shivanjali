@@ -40,12 +40,13 @@ h1, h2, h3, h4 {
 
 /* Utility Classes */
 .section-padding {
-    padding: 80px 6%;
+    padding: clamp(40px, 10vw, 80px) 0;
 }
 
-.max-width {
+.container {
     max-width: 1200px;
-    margin: 0 auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
 }
 
 .btn-primary {
@@ -53,12 +54,9 @@ h1, h2, h3, h4 {
     color: var(--white);
     padding: 12px 32px;
     border-radius: 50px;
-    text-decoration: none;
     font-weight: 600;
-    display: inline-block;
     transition: all 0.3s ease;
     border: none;
-    cursor: pointer;
 }
 
 .btn-primary:hover {
@@ -67,81 +65,57 @@ h1, h2, h3, h4 {
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-/* Navbar */
+/* Navbar - Bootstrap 5 */
+.navbar {
+    font-family: 'Outfit', sans-serif;
+}
 
-.logo-img
-{
+.navbar-brand {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
     width: 40px;
     height: 40px;
     border-radius: 50%;
     object-fit: cover;
 }
 
-nav {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    padding: 20px 6%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 1000;
-    transition: all 0.3s ease;
+.navbar-dark .navbar-toggler {
+    border-color: var(--white);
 }
 
-@media (max-width: 768px) {
-    nav {
-        background-color: rgba(45, 90, 39, 0.95);
-        padding: 15px 6%;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    }
+.navbar-dark .navbar-toggler:focus {
+    box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.25);
 }
 
-nav.scrolled {
-    background-color: var(--white);
-    padding: 15px 6%;
+.navbar-dark .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Navbar Scroll Effect */
+.navbar.scrolled {
+    background-color: var(--white) !important;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
-.logo {
-    font-size: 24px;
-    font-weight: 700;
-    color: var(--white);
-    text-decoration: none;
-    font-family: 'Playfair Display', serif;
+.navbar.scrolled .navbar-brand {
+    color: var(--primary) !important;
 }
 
-nav.scrolled .logo {
-    color: var(--primary);
-}
-
-.nav-links {
-    display: flex;
-    list-style: none;
-    gap: 30px;
-}
-
-.nav-links a {
-    text-decoration: none;
+.navbar-dark .nav-link {
     color: var(--white);
     font-weight: 500;
     transition: color 0.3s ease;
     position: relative;
 }
 
-nav.scrolled .nav-links a {
-    color: var(--text-gray);
-}
-
-.nav-links a:hover {
+.navbar-dark .nav-link:hover {
     color: var(--accent);
 }
 
-nav.scrolled .nav-links a:hover {
-    color: var(--primary);
-}
-
-.nav-links a::after {
+.navbar-dark .nav-link::after {
     content: '';
     position: absolute;
     bottom: -5px;
@@ -152,39 +126,16 @@ nav.scrolled .nav-links a:hover {
     transition: width 0.3s ease;
 }
 
-.nav-links a:hover::after {
+.navbar-dark .nav-link:hover::after {
     width: 100%;
 }
 
-.hamburger {
-    display: none;
-    cursor: pointer;
-    color: var(--white);
-    font-size: 24px;
-    background: none;
-    border: none;
-}
-
-nav.scrolled .hamburger {
-    color: var(--primary);
-}
-
-/* Mobile Menu */
-.nav-links.active {
-    display: flex !important;
-    flex-direction: column;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background-color: var(--white);
-    padding: 20px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-.nav-links.active a {
+.navbar.scrolled .nav-link {
     color: var(--text-gray) !important;
-    margin-bottom: 10px;
+}
+
+.navbar.scrolled .nav-link:hover {
+    color: var(--primary) !important;
 }
 
 /* Hero Section */
@@ -223,10 +174,7 @@ nav.scrolled .hamburger {
 }
 
 .about-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: center;
+    /* Bootstrap grid handles layout */
 }
 
 .about-image {
@@ -332,9 +280,7 @@ nav.scrolled .hamburger {
 }
 
 .services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
+    /* Bootstrap row handles grid layout */
 }
 
 .service-card {
@@ -498,9 +444,7 @@ video.carousel-item::-webkit-media-controls {
 }
 
 .specs-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
+    /* Bootstrap row handles grid layout */
 }
 
 .spec-item {
@@ -538,9 +482,7 @@ video.carousel-item::-webkit-media-controls {
 }
 
 .pricing-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
+    /* Bootstrap row handles grid layout */
 }
 
 .price-card {
@@ -622,9 +564,7 @@ video.carousel-item::-webkit-media-controls {
 }
 
 .contact-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
+    /* Bootstrap row handles grid layout */
 }
 
 .contact-info h2 {
@@ -774,10 +714,7 @@ footer {
 }
 
 .footer-grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    gap: clamp(30px, 5vw, 60px);
-    margin-bottom: clamp(30px, 5vw, 60px);
+    /* Bootstrap row handles grid layout */
 }
 
 .footer-logo {

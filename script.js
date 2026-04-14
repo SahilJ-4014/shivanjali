@@ -87,30 +87,24 @@ $(document).ready(function() {
         }
     });
 
-    // Navbar Scroll Effect
-    const $nav = $('nav');
+    // Navbar Scroll Effect (Bootstrap navbar)
+    const $navbar = $('.navbar');
     $(window).on('scroll', function() {
         if ($(window).scrollTop() > 50) {
-            $nav.addClass('scrolled');
+            $navbar.addClass('scrolled');
         } else {
-            $nav.removeClass('scrolled');
+            $navbar.removeClass('scrolled');
         }
     });
 
-    // Mobile Menu Toggle
-    const $hamburger = $('.hamburger');
-    const $navLinks = $('.nav-links');
-    
-    if ($hamburger.length && $navLinks.length) {
-        $hamburger.on('click', function() {
-            $navLinks.toggleClass('active');
-        });
-        
-        // Close mobile menu when clicking on a link - Event delegation
-        $navLinks.on('click', 'a', function() {
-            $navLinks.removeClass('active');
-        });
-    }
+    // Close mobile menu when clicking on a link - Bootstrap offcanvas
+    $('.navbar-collapse a').on('click', function() {
+        const navbarToggle = document.querySelector('.navbar-toggler');
+        const navbarCollapse = document.querySelector('.navbar-collapse');
+        if (navbarCollapse.classList.contains('show')) {
+            navbarToggle.click();
+        }
+    });
 
     // Smooth scrolling for navigation links
     $('a[href^="#"]').on('click', function(e) {

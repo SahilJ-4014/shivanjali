@@ -1052,52 +1052,25 @@ footer {
         height: 32px;
     }
     
-    .hamburger {
-        display: block !important;
-        color: var(--white);
-        font-size: 20px;
-        padding: 5px;
+    /* Bootstrap navbar collapse - mobile adjustments */
+    .navbar-collapse {
+        margin-top: 10px;
     }
     
-    nav.scrolled .hamburger {
-        color: var(--primary);
+    .navbar-collapse.show {
+        background-color: rgba(45, 90, 39, 0.98);
+        border-radius: 8px;
+        padding: 15px 20px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     }
     
-    .nav-links {
-        display: none !important;
+    .navbar-nav .nav-link {
+        padding: 8px 0 !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
     
-    .nav-links.active {
-        display: flex !important;
-        flex-direction: column;
-        position: fixed;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        background-color: var(--white);
-        padding: 15px 4%;
-        gap: 0;
-        z-index: 998;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        max-height: calc(100vh - 60px);
-        overflow-y: auto;
-    }
-    
-    .nav-links.active a {
-        color: var(--text-gray) !important;
-        padding: 12px 0;
-        display: block;
-        font-size: 15px;
-        border-bottom: 1px solid #eee;
-    }
-    
-    .nav-links.active a:last-child {
+    .navbar-nav .nav-link:last-child {
         border-bottom: none;
-    }
-    
-    .nav-links a {
-        padding: 12px 0;
-        display: block;
     }
     
     /* Footer */

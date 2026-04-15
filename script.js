@@ -70,6 +70,52 @@ function currentSlide(dot, index) {
 // Initialize on document ready
 $(document).ready(function() {
     
+    // Initialize Theme Switcher
+    const themeToggle = document.getElementById('themeToggle');
+    const htmlElement = document.documentElement;
+    const body = document.body;
+    
+    // Check for saved theme preference or default to light mode
+    const currentTheme = localStorage.getItem('theme') || 'light';
+    
+    // Set initial theme
+    if (currentTheme === 'dark') {
+        body.classList.add('dark-theme');
+        htmlElement.setAttribute('data-theme', 'dark');
+        if (themeToggle) {
+            themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+        }
+    } else {
+        body.classList.remove('dark-theme');
+        htmlElement.setAttribute('data-theme', 'light');
+        if (themeToggle) {
+            themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+        }
+    }
+    
+    // Theme Toggle Button Event Listener
+    if (themeToggle) {
+        themeToggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            if (body.classList.contains('dark-theme')) {
+                // Switch to light theme
+                body.classList.remove('dark-theme');
+                htmlElement.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+                themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+                themeToggle.title = 'Switch to Dark Mode';
+            } else {
+                // Switch to dark theme
+                body.classList.add('dark-theme');
+                htmlElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+                themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+                themeToggle.title = 'Switch to Light Mode';
+            }
+        });
+    }
+    
     // Initialize all carousels
     $('.service-carousel').each(function() {
         const manager = new CarouselManager(this);

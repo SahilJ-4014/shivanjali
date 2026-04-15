@@ -831,6 +831,38 @@ footer {
     font-size: 14px;
 }
 
+.developer-credits {
+    margin-top: 25px;
+    padding-top: 25px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    text-align: center;
+}
+
+.developer-credits h5 {
+    color: var(--white);
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.developer-credits p {
+    color: rgba(255,255,255,0.8);
+    font-size: 13px;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+.developer-credits .department-info {
+    color: rgba(255,255,255,0.7);
+    font-size: 12px;
+    font-style: italic;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
 /* Responsive */
 @media (max-width: 1024px) {
     .service-card {
